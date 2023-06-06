@@ -10,7 +10,7 @@ export default function AddTask() {
   const router = useRouter();
   const [ModalOpen, setModalOpen] = useState(false);
   const [newTaskValue, setNewTaskValue] = useState("");
-  console.log(typeof newTaskValue);
+  
     async function hanldeSubmitNewTodo(event: FormEvent<HTMLFormElement>) {
       
         event.preventDefault();
