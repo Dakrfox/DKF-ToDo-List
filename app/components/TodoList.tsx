@@ -1,4 +1,11 @@
-export default function TodoList() {
+import { ITask } from "@/types/tasks";
+import React from "react";
+import Task from "./Task";
+interface TodoListProps {
+  tasks: ITask[];
+}
+
+export default function TodoList({ tasks }: TodoListProps) {
   return (
     <div className="overflow-x-auto">
       <table className="table">
@@ -10,11 +17,7 @@ export default function TodoList() {
           </tr>
         </thead>
         <tbody>
-          {/* row 1 */}
-          <tr>
-            <td>Cy Ganderton</td>
-            <td>Blue</td>
-          </tr>
+          {tasks.map((task) => <Task key={task.id} task={task}/>)}
         </tbody>
       </table>
     </div>
